@@ -34,6 +34,12 @@ module.exports = {
     this.model = sequelize.define("task", TaskModel, {
       paranoid: true,
       timestamps: true,
+      indexes: [
+        {
+          name: 'ownerId_index',
+          fields: ['ownerId'],
+        }
+      ],
     })
   },
 

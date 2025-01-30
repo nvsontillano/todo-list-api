@@ -35,6 +35,12 @@ module.exports = {
     this.model = sequelize.define("user", UserModel, {
       paranoid: true,
       timestamps: true,
+      indexes: [
+        {
+          name: 'username_email_index', 
+          fields: ['username', 'email'],
+        }
+      ],
     });
   },
 

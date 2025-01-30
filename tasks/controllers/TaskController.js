@@ -50,7 +50,6 @@ module.exports = {
         data: newTask.toJSON(),
       });
     } catch (error) {
-      console.log(error);
       return res.status(500).json({
         status: false,
         error,
@@ -107,7 +106,6 @@ module.exports = {
 
       // Get all tasks that need to be updated aside from the current task
       let lowerPosition, higherPosition;
-      console.log(taskOldPosition, taskNewPosition);
       if (taskOldPosition > taskNewPosition) {
         lowerPosition = taskNewPosition;
         higherPosition = taskOldPosition - 1;
@@ -115,8 +113,8 @@ module.exports = {
         lowerPosition = taskOldPosition + 1;
         higherPosition = taskNewPosition;
       }
-      console.log(lowerPosition, higherPosition);
 
+      // TODO: We can batch the fetching and updating of tasks to prevent out of memory errors
       const tasksToChange = await TaskModel.getAllTasks({
         ownerId: userId,
         position: {
@@ -152,7 +150,6 @@ module.exports = {
         data: updatedTask.toJSON(),
       });
     } catch (error) {
-      console.log(error);
       return res.status(500).json({
         status: false,
         error,
