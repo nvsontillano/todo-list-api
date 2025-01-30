@@ -1,0 +1,28 @@
+{
+  "name": "todo-list-api",
+  "version": "1.0.0",
+  "description": "An API for managing a TODO list",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nvsontillano/todo-list-api.git"
+  },
+  "author": "Nicole Sontillano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nvsontillano/todo-list-api/issues"
+  },
+  "homepage": "https://github.com/nvsontillano/todo-list-api#readme",
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "bcrypt": "^5.1.1",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "sequelize": "^6.37.5",
+    "sqlite3": "^5.1.7"
+  }
+}
