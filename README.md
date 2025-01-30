@@ -76,7 +76,7 @@ Creates a task. By default:
 _Response:_ Returns the newly created task.
 
 **GET /task**  
-Retrieves all tasks for the logged-in user, including done and deleted tasks.
+Retrieves all tasks for the logged-in user, including done tasks.
 
 **PATCH /task/:taskId**  
 Updates the details of a specific task.  

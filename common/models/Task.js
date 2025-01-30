@@ -41,10 +41,10 @@ module.exports = {
     return this.model.findByPk(id);
   },
 
-  getAllTasks: (filter) => {
+  getAllTasks: (filter, includeDeleted) => {
     return this.model.findAll({
       where: filter,
-      paranoid: false,
+      paranoid: includeDeleted,
     });
   },
 

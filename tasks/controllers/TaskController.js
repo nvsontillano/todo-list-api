@@ -9,7 +9,7 @@ module.exports = {
         ownerId: req.user.userId,
       };
 
-      const tasks = await TaskModel.getAllTasks(filter);
+      const tasks = await TaskModel.getAllTasks(filter, false);
       
       return res.status(200).json({
         status: true,
@@ -122,7 +122,7 @@ module.exports = {
         position: {
           [Sequelize.Op.between]: [lowerPosition, higherPosition],
         },
-      });
+      }, true);
 
       // Update the task all at once
       const delta = taskOldPosition > taskNewPosition ? 1 : -1;

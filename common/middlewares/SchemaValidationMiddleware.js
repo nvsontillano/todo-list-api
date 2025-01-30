@@ -1,6 +1,6 @@
 const Ajv = require('ajv');
 
-generateErrorMessages = (validate) => {
+generateErrorMessages = (ajv, validate) => {
   // Generate error messages based on the error type
   let errorMessages = validate.errors.map((error) => {
     switch (error.keyword) {
@@ -52,7 +52,7 @@ module.exports = {
         return next();
       }
 
-      const errorMessages = generateErrorMessages(validate);
+      const errorMessages = generateErrorMessages(ajv, validate);
 
       return res.status(400).send({
         status: false,
