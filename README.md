@@ -114,3 +114,6 @@ Soft deletes a task. The task remains in the database but is marked as deleted.
     Prevent abuse by limiting requests to certain endpoints.  
     _Example:_ Apply rate limits to `/auth/login` to reduce brute-force attacks.  
     Use libraries like `express-rate-limit`.
+
+6. **Linting**
+    Add linter like ESLint to enforce coding conventions. This will improve the readability and organization of the code.
